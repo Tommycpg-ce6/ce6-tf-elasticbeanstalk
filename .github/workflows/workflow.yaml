@@ -47,7 +47,7 @@ jobs:
       id: tfout
       run: |
         echo "EB_APP=$(terraform output -raw tom-eb-app)" >> $GITHUB_OUTPUT
-        echo "EB_ENV=$(terraform output -raw tom-eb-app-env)" >> $GITHUB_OUTPUT
+        echo "EB_ENV=$(terraform output -raw tom-eb-app)" >> $GITHUB_OUTPUT
 
     - name: Generate deployment package
       working-directory: ./nodejs

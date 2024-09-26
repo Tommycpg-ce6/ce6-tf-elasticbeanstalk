@@ -1,5 +1,5 @@
 const port = process.env.PORT || 3000,
-    http = require('http'),
+    https = require('https'),
     fs = require('fs'),
     html = fs.readFileSync('index.html');
 
@@ -7,7 +7,7 @@ const log = function(entry) {
     fs.appendFileSync('/tmp/sample-app.log', new Date().toISOString() + ' - ' + entry + '\n');
 };
 
-const server = http.createServer(function (req, res) {
+const server = https.createServer(function (req, res) {
     if (req.method === 'POST') {
         let body = '';
 
